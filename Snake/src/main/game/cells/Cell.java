@@ -2,7 +2,7 @@ package main.game.cells;
 
 import java.awt.Point;
 
-public interface ICell {
+public interface Cell {
 
 	// GETTERS
 	Point getCoords();
