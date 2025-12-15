@@ -9,7 +9,12 @@ import main.input.InputManager;
 
 public class Game {
 	
-	public static final int DEFAULT_DELTA_TIME = 500;
+	/**
+	 * The default delay between game updates 
+	 * 
+	 * Default half a second (0.5)
+	 */
+	public static final int DEFAULT_TICK_DELAY = 500;
 	
 	public static final int DEFAULT_BOARD_SIZE = 10;
 	public static final int INITIAL_SNAKE_SIZE = 3;
@@ -62,7 +67,7 @@ public class Game {
 	}
 	
 	public Game(InputManager im) {
-		this(im, DEFAULT_DELTA_TIME);
+		this(im, DEFAULT_TICK_DELAY);
 	}
 	
 	private void createBoard() {
@@ -209,7 +214,7 @@ public class Game {
 	
 	private void checkWin() {
 		if (snake.size() >= board.length * board.length) {
-			System.out.println("*** YOU WIN! ***");
+			System.out.println("*** VICTORIA! ***");
 			gameOver();
 		}
 	}

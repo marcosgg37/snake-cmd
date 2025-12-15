@@ -19,7 +19,6 @@ public class Main {
 		GlobalScreen.addNativeKeyListener(new KeyAdapter(im));
 		GlobalScreen.registerNativeHook();
 		
-		
 		if (!(args.length == 0 || args.length == 1)) throw new Exception("Invalid argument amount");
 		
 		if (args.length == 1) g = new Game(im, Integer.parseInt(args[0]));
@@ -39,6 +38,7 @@ public class Main {
 			e.printStackTrace();
 		}
 		
+		GlobalScreen.unregisterNativeHook();
 		System.exit(0);
 		
 	}
