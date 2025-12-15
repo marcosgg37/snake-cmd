@@ -2,7 +2,7 @@ package main.game.cells;
 
 import java.awt.Point;
 
-public class SnakeCell extends Cell {
+public class SnakeCell extends BaseCell {
 
 	private boolean isHead;
 	private boolean isTail;
