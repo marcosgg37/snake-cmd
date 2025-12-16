@@ -16,6 +16,7 @@ public class Game {
 	 */
 	public static final int DEFAULT_TICK_DELAY = 500;
 	
+	public static final int DEFAULT_BOARD_SIZE = 10;
 	public static final int INITIAL_SNAKE_SIZE = 3;
 	public static final Point DEFAULT_INITIAL_POSITION = new Point(0, 0);
 	
@@ -47,7 +48,7 @@ public class Game {
 	
 	private int deltaTime;
 	
-	private Board board;
+	private char[][] board;
 	private LinkedList<SnakeCell> snake = new LinkedList<>();
 	private FoodCell food;
 	
@@ -70,7 +71,7 @@ public class Game {
 	}
 	
 	private void createBoard() {
-		this.board = Board.getInstance();
+		this.board = new char[DEFAULT_BOARD_SIZE][DEFAULT_BOARD_SIZE];
 	}
 	
 	private void initializeSnake() {
