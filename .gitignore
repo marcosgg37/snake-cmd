@@ -1,2 +1,2 @@
-# ignore dlls
-*.dll
+# ignore everything related to the executable
+bin/*
