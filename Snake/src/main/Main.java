@@ -3,9 +3,9 @@ package main;
 import com.github.kwhat.jnativehook.GlobalScreen;
 
 import main.game.Game;
-import main.input.InputManager;
 import main.input.KeyAdapter;
 //import main.input.InputManager;
+import main.input.InputManager;
 
 public class Main {
 	
