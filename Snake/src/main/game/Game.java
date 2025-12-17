@@ -14,7 +14,7 @@ public class Game {
 	 * 
 	 * Default half a second (0.5)
 	 */
-	public static final int DEFAULT_TICK_DELAY = 500;
+	public static final int DEFAULT_TICK_DELAY = 300;
 	
 	public static final int DEFAULT_BOARD_SIZE = 10;
 	public static final int INITIAL_SNAKE_SIZE = 3;

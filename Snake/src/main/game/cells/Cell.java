@@ -2,12 +2,12 @@ package main.game.cells;
 
 import java.awt.Point;
 
-public abstract class BaseCell implements ICell {
+public abstract class Cell implements ICell {
 
 	private Point coords;
 	protected char value;
 	
-	public BaseCell(Point p) {
+	public Cell(Point p) {
 		this.coords = p;
 		this.value = ' ';
 	}

@@ -2,7 +2,7 @@ package main.game.cells;
 
 import java.awt.Point;
 
-public class SnakeCell extends BaseCell {
+public class SnakeCell extends Cell {
 
 	private boolean isHead;
 	private boolean isTail;
@@ -11,7 +11,7 @@ public class SnakeCell extends BaseCell {
 		super(p);
 		this.isHead = isHead;
 		this.isTail = isTail;
-		super.value = isHead ? '◘' : '█';
+		super.value = isHead ? '@' : '█';
 	}
 
 	public void isNoLongerTail() {
