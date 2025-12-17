@@ -26,7 +26,6 @@ public class KeyAdapter implements NativeKeyListener {
 	public void nativeKeyPressed(NativeKeyEvent nativeEvent) {
 		// TODO Auto-generated method stub
 		NativeKeyListener.super.nativeKeyPressed(nativeEvent);
-		System.out.println(nativeEvent.getKeyCode());
 		
 		switch (nativeEvent.getKeyCode()) {
 		case UP_ARROW_KEY_CODE:

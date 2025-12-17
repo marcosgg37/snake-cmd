@@ -1,6 +1,7 @@
 package main.game;
 
 import java.awt.Point;
+import java.io.IOException;
 import java.util.LinkedList;
 
 import main.game.cells.FoodCell;
@@ -21,6 +22,8 @@ public class Game {
 	public static final Point DEFAULT_INITIAL_POSITION = new Point(0, 0);
 	
 	private InputManager im;
+	
+	private ProcessBuilder pb;
 	
 	private Runnable runGame = new Runnable() {
 		public void run() {
@@ -57,6 +60,8 @@ public class Game {
 	private boolean gameOver = false;
 	
 	public Game(InputManager im, int deltaTime) {
+		this.pb = new ProcessBuilder("cmd", "/c", "cls").inheritIO();
+		
 		this.im = im;
 		
 		createBoard();
@@ -182,6 +187,7 @@ public class Game {
 	}
 	
 	private void updateBoard() {
+		
 		for (int i = 0; i < board.length; i++)
 			for (int j = 0; j < board.length; j++)
 				board[i][j] = ' ';
@@ -190,6 +196,12 @@ public class Game {
 	}
 	
 	public void showBoard() {
+		
+		try {
+			pb.start().waitFor();
+		} catch (IOException | InterruptedException e) {
+			e.printStackTrace();
+		}
 		
 		for (int i = 0; i < (board.length * 2) + 3; i++) System.out.print("=");
 		
