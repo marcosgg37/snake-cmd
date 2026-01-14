@@ -12,6 +12,7 @@ public class SnakeCell extends Cell {
 		this.isHead = isHead;
 		this.isTail = isTail;
 		super.value = isHead ? '@' : '█';
+		super.color = "green";
 	}
 
 	public void isNoLongerTail() {

@@ -8,9 +8,9 @@ public interface ICell {
 	Point getCoords();
 
 	char getValue();
+	String getColor();
 
 	void setCoords(int x, int y);
-
 	void setCoords(Point p);
 
 }

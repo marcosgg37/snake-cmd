@@ -2,9 +2,6 @@ package main.scenes;
 
 import java.util.ArrayList;
 
-import com.github.kwhat.jnativehook.GlobalScreen;
-import com.github.kwhat.jnativehook.NativeHookException;
-
 import main.input.IInputManager;
 import main.input.KeyAdapter;
 import main.input.MenuInputManager;
@@ -28,7 +25,7 @@ public class MenuScene implements IScene {
 		this.options.add("Salir");
 		
 		this.menu = new Menu(options.toArray(new String[0]));
-		this.im = new MenuInputManager(menu, this);
+		this.im = new MenuInputManager(menu);
 		this.ka = this.sm.getKeyAdapter();
 	}
 

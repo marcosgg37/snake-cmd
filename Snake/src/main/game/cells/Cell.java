@@ -6,6 +6,7 @@ public abstract class Cell implements ICell {
 
 	private Point coords;
 	protected char value;
+	protected String color;
 	
 	public Cell(Point p) {
 		this.coords = p;
@@ -32,5 +33,8 @@ public abstract class Cell implements ICell {
 	public void setCoords(Point p) {
 		this.coords = p;
 	}
+	
+	@Override
+	public String getColor() { return this.color; }
 	
 }
