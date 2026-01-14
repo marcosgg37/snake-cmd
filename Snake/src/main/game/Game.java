@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 import main.game.cells.FoodCell;
 import main.game.cells.SnakeCell;
-import main.input.InputManager;
+import main.input.GameInputManager;
 
 public class Game {
 	
@@ -20,7 +20,7 @@ public class Game {
 	public static final int INITIAL_SNAKE_SIZE = 3;
 	public static final Point DEFAULT_INITIAL_POSITION = new Point(0, 0);
 	
-	private InputManager im;
+	private GameInputManager im;
 	
 	private Runnable runGame = new Runnable() {
 		public void run() {
@@ -56,18 +56,23 @@ public class Game {
 	
 	private boolean gameOver = false;
 	
-	public Game(InputManager im, int deltaTime) {
+	public Game(GameInputManager im, int deltaTime) {
 		this.im = im;
 		
-		createBoard();
-		initializeSnake();
-		spawnFood();
+		initialize();
 		
 		this.deltaTime = deltaTime;
 	}
 	
-	public Game(InputManager im) {
+	public Game(GameInputManager im) {
 		this(im, DEFAULT_TICK_DELAY);
+	}
+	
+	public void initialize() {
+		createBoard();
+		initializeSnake();
+		im.setDirection('d');
+		spawnFood();
 	}
 	
 	private void createBoard() {

@@ -1,25 +1,54 @@
 package main.scenes;
 
+import main.game.Game;
+import main.input.GameInputManager;
+import main.input.IInputManager;
+import main.input.KeyAdapter;
+
 public class GameScene implements IScene {
 
-	
-	
+	private SceneManager sm;
+
+	private Game game;
+	private GameInputManager im;
+	private KeyAdapter ka;
+
+	public GameScene(SceneManager sm) {
+		this.sm = sm;
+		this.im = new GameInputManager();
+		this.ka = this.sm.getKeyAdapter();
+	}
+
 	@Override
 	public void loadScene() {
-		// TODO Auto-generated method stub
-		
+		this.ka.setInputManager(im);
+		this.game = new Game(im);
+		this.run();
 	}
 
 	@Override
 	public void unloadScene() {
-		// TODO Auto-generated method stub
-		
+		game.initialize();
 	}
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Game Scene";
+	}
+
+	@Override
+	public void run() {
+		this.game.getRunnable().run();
+		this.stop();
+	}
+
+	@Override
+	public IInputManager getInputManager() {
+		return this.im;
+	}
+
+	public void stop() {
+		sm.swapToScene(sm.getMenu());
 	}
 
 }
