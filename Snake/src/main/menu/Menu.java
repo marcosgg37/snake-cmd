@@ -31,6 +31,7 @@ public class Menu {
 	}
 	
 	public void draw() {
+		System.out.print("\033[H\033[2J");
 		System.out.println("============================");
 		System.out.println("[Flecha arriba ^ / Flecha abajo v] para mover el cursor");
 		System.out.println("[Flecha derecha >] para confirmar");

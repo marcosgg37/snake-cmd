@@ -1,6 +1,7 @@
 package main.game;
 
 import java.awt.Point;
+import java.io.IOException;
 import java.util.LinkedList;
 
 import main.game.cells.FoodCell;
@@ -19,6 +20,8 @@ public class Game {
 	public static final int DEFAULT_BOARD_SIZE = 10;
 	public static final int INITIAL_SNAKE_SIZE = 3;
 	public static final Point DEFAULT_INITIAL_POSITION = new Point(0, 0);
+	
+	private final String[] cmdarray = {"cls"};
 	
 	private GameInputManager im;
 	
@@ -195,6 +198,8 @@ public class Game {
 	}
 	
 	public void showBoard() {
+		
+		System.out.print("\033[H\033[2J");
 		
 		for (int i = 0; i < (board.length * 2) + 3; i++) System.out.print("=");
 		
